@@ -4,7 +4,8 @@
  */
 var isValidSudoku = function(board) {
       const rows = [], cols = [], boxes = [];
-  for(let i = 0; i < board.length; i++) {
+  for(let i = 0; i < board.length; i++) {  
+      //must check for duplicates which is why new sets will be pushed into each row, column and boxes
       rows.push(new Set());
       cols.push(new Set());
       boxes.push(new Set());
