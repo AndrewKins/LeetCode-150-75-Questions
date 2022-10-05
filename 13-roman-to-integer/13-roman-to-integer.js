@@ -4,34 +4,39 @@
  */
 /*
 P
-    -Converting roman numerals to values.
-    -Roman numerals represented by seven different symbols.
-    -2 written as II (concatenated) 
-    -12 is written as XII simply X + II
-
-    -Roman numbers- Largest to Smallest (left to right)
-    -4 is written as IV. I = 1 is before the 5
+    -Change the roman numerals into its corresponding numeric value
+    -Given a string, turn into a number
 E
-    
+    -XVI => 16
+    -MCMXCIV =>
+    -M = 1000
+    -CM (C=100) (M=1000)
+    (C= -100 + M = 1000) = 900
+    (M = 1000 - C = 100) = 900
 D
+    -Objects 
 A
-    -Initialize a hashMap to contain our symbols/values
-    -loop through the given input
-    -check our hashmap for that input
-    -if input is found, increment that value
+    -Initialize a hashMap that will contain key pairs of symbols and values
+    -Initialize a counter to keep track of the sum of the given integers
+    -Loop through the given input
+        -Initialize 2 variables 1 for the current and 1 for the next ele
+            -If the Curr is less than the next ele
+                -Decrement the counter by the currEle
+            Else
+                -Increment the counter by the current ele
+            return the counter
 C
 */
+
 var romanToInt = function(s) {
     let hashMap = {I:1, V:5, X:10, L:50, C:100, D:500, M:1000}
-   let result = 0;
-    for (let i = 0; i < s.length; i++) {
+    let result = 0;
+    for(let i = 0; i < s.length; i += 1){
         const currEle = hashMap[s[i]]
-        const nextEle = hashMap[s[i+1]]
-        //if the next roman numeral is larger, then we know we have to subtract this number
+        const nextEle = hashMap[s[i + 1]]
         if (currEle < nextEle) {
             result -= currEle
-        } 
-        //otherwise, add like normal. 
+        }
         else {
             result += currEle
         }
