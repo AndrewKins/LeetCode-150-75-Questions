@@ -50,10 +50,10 @@ var mergeTwoLists = function(list1, list2) {
         }
             current = current.next;
         }
-        if(list1 === null && list2!== null){
+        if(list1 === null && list2 != null){
             current.next = list2;
         }
-        else if(list1 !== null && list2 === null){
+        else if(list1 != null && list2 === null){
             current.next = list1;
         }
         return Dummy.next;  
