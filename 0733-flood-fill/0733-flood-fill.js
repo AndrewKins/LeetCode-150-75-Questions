@@ -6,16 +6,12 @@
  * @return {number[][]}
  */
 var floodFill = function(image, sr, sc, newColor) {
-    //check for null values image
-    //dfs using recursion
-    //check for out of bounds
-    
-    //check if there are positions to check or already colored in
+    //check if there is an image
     if(image === null || image.length < 1 || image[sr][sc] === newColor){
         return image
     }
-    
-    const initialImage = image[sr][sc];
+    //keep track of original image
+   const initialImage = image[sr][sc];
     
     const fill = (image,r,c,newColor, initalImage) => {
         if(r < 0 || r >= image.length || c < 0 || c >= image[0].length || initialImage !== image[r][c]){
