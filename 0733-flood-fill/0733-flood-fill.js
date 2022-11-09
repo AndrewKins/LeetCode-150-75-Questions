@@ -8,7 +8,7 @@
 var floodFill = function(image, sr, sc, newColor) {
     //if checking if the image is null or if a position already has a new color
     //if so there is nothing to do so return the image.
-    if(image == null || image.length < 1 || image[sr][sc] == newColor){
+    if(image == null || image.length === 0 || image[sr][sc] == newColor){
         return image;
     }
     const initialImage = image[sr][sc];
